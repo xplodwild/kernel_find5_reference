@@ -1333,6 +1333,7 @@ static void msm_fb_do_refresh(struct work_struct *work)
 /* OPPO 2012-11-15 huyu Delete for boot LOGO */
 
 #ifdef CONFIG_VENDOR_EDIT
+int load_565rle_image(char *filename, bool bf_supported);
 // LiuJun@OnlineRD.Driver.TouchScreen, 2012/11/19, Add for display rle file
 int display_rle_file(char *filename)
 {
@@ -1361,7 +1362,7 @@ static int msm_fb_register(struct msm_fb_data_type *mfd)
 	int fbram_offset;
 	int remainder, remainder_mode2;
 #ifdef CONFIG_VENDOR_EDIT
-	int ftmmode;
+       int ftmmode;
 #endif
 
 	/*
